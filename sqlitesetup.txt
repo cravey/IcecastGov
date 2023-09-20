@@ -1,0 +1,19 @@
+sqlite3 client_config.db
+
+
+CREATE TABLE IF NOT EXISTS ClientInfo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_name TEXT NOT NULL,
+    port INTEGER NOT NULL,
+    instanceNum INTEGER,
+    sourcepassword TEXT,
+    relaypassword TEXT,
+    adminpassword TEXT,
+    adminuser TEXT,
+    ipaddress TEXT,
+    logsize INTEGER,
+    archivecount INTEGER
+);
+
+.tables
+.quit
