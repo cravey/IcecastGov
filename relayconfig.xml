@@ -1,0 +1,11 @@
+    <relays>
+        <relay>
+            <server>master.example.com</server> <!-- Master Icecast server address -->
+            <port>8000</port>                     <!-- Port on the master server -->
+            <mount>/mymount</mount>              <!-- The mount point you want to relay -->
+            <local-mount>/localmount</local-mount><!-- Optional: Rename the mount point locally -->
+            <relay-shoutcast-metadata>0</relay-shoutcast-metadata> <!-- 1 to relay metadata -->
+        </relay>
+
+        <!-- Additional relay blocks can go here -->
+    </relays>
