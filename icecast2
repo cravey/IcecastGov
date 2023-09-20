@@ -1,22 +1,22 @@
 #!/bin/sh
-#To be placed in /usr/local/etc/rc.d/icecast2. One per instance. Change the instance number 2 to whatever
+#To be placed in /usr/local/etc/rc.d/icecast%%instancenum%%. One per instance. Change the instance number 2 to whatever
 #
 # $FreeBSD: ports/audio/icecast2/files/icecast2.sh.in,v 1.8 2010/08/16 15:23:57 ohauer Exp $
 #
 
-# PROVIDE: icecast2
+# PROVIDE: icecast%%instancenum%%
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable `icecast2'.
 #
-#icecast3_enable="YES"
+#icecast%%instancenum%%_enable="YES"
 #
 # To specify a non-default configuration file, set icecast_config
 # in /etc/rc.conf: 
 #
-#icecast3_config="/usr/local/etc/icecast3.xml"
+#icecast%%instancenum%%_config="/usr/local/etc/icecast3.xml"
 #
 # Make sure the <changeowner> section in your configuration file is
 # not commented out - icecast refuses to run as root.
@@ -24,12 +24,12 @@
 
 . /etc/rc.subr
 
-name="icecast2"
+name="icecast%%instancenum%%"
 rcvar=`set_rcvar`
-pidfile=/usr/local/share/icecast/icecast2.pid
+pidfile=/usr/local/share/icecast/icecast%%instancenum%%.pid
 
 command="/usr/local/bin/icecast"
-command_args="-b -c /usr/local/etc/icecast2.xml 1>/dev/null"
+command_args="-b -c /usr/local/etc/icecast%%instancenum%%.xml 1>/dev/null"
 extra_commands="reload"
 
 # read configuration and set defaults
