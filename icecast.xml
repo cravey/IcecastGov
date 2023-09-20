@@ -1,0 +1,59 @@
+<icecast>
+  <limits>
+    <clients>100</clients>
+    <sources>2</sources>
+    <threadpool>5</threadpool>
+    <queue-size>524288</queue-size>
+    <client-timeout>30</client-timeout>
+    <header-timeout>15</header-timeout>
+    <source-timeout>10</source-timeout>
+    <burst-on-connect>1</burst-on-connect>
+    <burst-size>65535</burst-size>
+  </limits>
+  
+  <authentication>
+    <source-password>%%sourcepwd%%</source-password>
+    <relay-password>%%relatpwd%%</relay-password>
+    <admin-user>%%adminusername%%</admin-user>
+    <admin-password>%%adminpw%%</admin-password>
+  </authentication>
+  
+  <hostname>%%hostname%%</hostname>
+  <hostname>%%hostname2%%</hostname>
+  <hostname>%%hostip%%</hostname>
+  
+  <listen-socket>
+    <port>%%port%%</port>
+    <bind-address>%%ipaddress%%</bind-address>
+
+    <shoutcast-mount>/stream</shoutcast-mount>
+  </listen-socket>
+  
+  <fileserve>1</fileserve>
+
+  <paths>
+    <basedir>/usr/local/share/icecast</basedir>
+    <logdir>/var/log/icecast</logdir>
+    <webroot>/usr/local/share/icecast/web</webroot>
+    <adminroot>/usr/local/share/icecast/admin</adminroot>
+    <pidfile>/usr/local/share/icecast/%%pidfilename%%</pidfile>
+    <alias source="/" dest="/status.xsl"/>
+  </paths>
+  
+  <logging>
+    <accesslog>%%accesslog%%</accesslog>
+    <errorlog>%%errorlog%%</errorlog>
+    <playlistlog>%%playlistlog%%</playlistlog> -->
+    <loglevel>2</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+    <logsize>50000</logsize> <!-- Max size of a logfile -->
+    <logarchive>%%archivecount%%</logarchive>
+  </logging>
+  
+  <security>
+    <chroot>0</chroot>
+    <changeowner>
+      <user>icecast</user>
+      <group>icecast</group>
+    </changeowner>
+  </security>
+</icecast>
